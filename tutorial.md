@@ -7,7 +7,40 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Run app
+## Install Livewire
 ``
-php artisan serve
+composer require livewire/livewire
 ``
+
+## SearchBar 
+``
+php artisan make:livewire SearchBar
+``
+
+## Install npm
+``
+npm install
+npm run dev
+``
+
+## Install boostrap
+``
+npm i --save-dev bootstrap @popperjs/core sass
+``
+
+### Create resources/scss/app.scss
+``
+mkdir resources/scss
+touch resources/scss/app.scss
+``
+
+```
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+```
+
+## Create Model Todo with migration
+``
+php artisan make:model Todo -m
+``
+
