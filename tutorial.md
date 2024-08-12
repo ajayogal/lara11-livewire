@@ -58,3 +58,56 @@ Usage: Access Telescope via `/telescope` in your application. It provides a deta
 composer require barryvdh/laravel-debugbar --dev
 ``
 
+## Livewire essentials
+### Livewire Components
+Create components 
+``
+php artisan make:livewire UserSearch
+php artisan make:livewire users-list
+php artisan make:livewire auth.navigation
+``
+
+### Livewire properties
+```
+public $todos = [];
+public $todo = '';
+public function  mount()
+{
+    //fetch todos from db
+    $this->todos = ['First todo', 'Second todo'];
+}
+```
+
+### Livewire methods
+```
+public function addTodo()
+{
+    //save todo in db
+    $this->todos[] = $this->todo;
+
+    $this->reset('todo'); //reset the property 
+}
+```
+
+### Livewire Event Listeners
+```
+wire:click  - Triggered when element is clicked
+wire:submit - Triggered when a form is submitted
+wire:keydown- Triggered when key is pressed down
+wire:keyup  - Triggered when key is released
+wire:mouseenter     - Triggered when mouse enters elements
+wire:*      - Whatever text follows wire: will be used as event 
+```
+
+## Livewire Volt
+
+``
+composer require livewire/volt
+php artisan volt:install
+``
+
+### Livewire volt components
+``
+php artisan make:volt volt-component
+``
+
