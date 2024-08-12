@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
         User::factory()
-        ->count(2)
-        ->hasTodos(10)
+        ->count(20)
+        ->hasTodos(5)
         ->create();
 
         // User::factory()->create([
