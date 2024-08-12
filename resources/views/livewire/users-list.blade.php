@@ -19,7 +19,7 @@
                         <h6 class="f-w-600 m-t-25 m-b-10">{{ $user->name }}</h6>
                         <p class="text-muted overflow-hidden text-truncate" title="{{ $user->email }}"><small>{{ $user->email }}</small></p>
                         <hr>
-                        <p class="text-muted m-t-15">Activity Level: {{ $user->todosPercentage() }}%</p>
+                        <p class="text-muted m-t-15">Activity Level: {{ $user->todos_percentage }}%</p>
                         <ul class="list-unstyled activity-leval">
                             <li class="active"></li>
                             <li class="active"></li>

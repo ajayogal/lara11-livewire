@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Todo;
 use App\Models\User;
 use Livewire\Component;
 
@@ -29,6 +30,10 @@ class UsersList extends Component
 
     public function searchUsers()
     {
+        $total_todos = Todo::count('id');
         $this->users = User::withCount('todos')->where("name", "like", "%$this->query%")->orWhere("email", "like", "%$this->query%")->get();
+        foreach($this->users as $user){
+            $user->todos_percentage = $total_todos > 0 ? round(($user->todos_count / $total_todos) * 100, 0) : 0;
+        }
     }
 }

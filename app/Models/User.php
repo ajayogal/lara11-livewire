@@ -50,15 +50,4 @@ class User extends Authenticatable
         return $this->hasMany(Todo::class);
     }
 
-    public function todosPercentage()
-    {
-        $totalTodos = Todo::count();
-        $userTodos = $this->todos()->count();
-
-        if ($totalTodos === 0) {
-            return 0;
-        }
-
-        return round(($userTodos / $totalTodos) * 100, 0);
-    }
 }
