@@ -30,10 +30,9 @@ class UsersList extends Component
 
     public function searchUsers()
     {
-        $total_todos = Todo::count('id');
-        $this->users = User::withCount('todos')->where("name", "like", "%$this->query%")->orWhere("email", "like", "%$this->query%")->get();
+        $this->users = User::withCount('todos')->withCount('completedTodos')->where("name", "like", "%$this->query%")->orWhere("email", "like", "%$this->query%")->get();
         foreach($this->users as $user){
-            $user->todos_percentage = $total_todos > 0 ? round(($user->todos_count / $total_todos) * 100, 0) : 0;
+            $user->todos_percentage = $user->todos_count > 0 ? round(($user->completed_todos_count / $user->todos_count) * 100, 0) : 0;
         }
     }
 }

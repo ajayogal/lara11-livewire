@@ -50,4 +50,16 @@ class User extends Authenticatable
         return $this->hasMany(Todo::class);
     }
 
+    public function completedTodos()
+    {
+        return $this->hasMany(Todo::class)
+        ->where('is_completed', true);
+    }
+
+    public function incompletedTodos()
+    {
+        return $this->hasMany(Todo::class)
+        ->where('is_completed', false);
+    }
+
 }

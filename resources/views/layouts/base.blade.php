@@ -10,14 +10,11 @@
 </head>
 
 <body>
+    <livewire:common.navigation />
     <div class="container">
         <!-- Page Heading -->
         @if (isset($header))
-        <nav class="navbar bg-body-tertiary mb-3">
-            <div class="container-fluid">
-                {{ $header }}
-            </div>
-        </nav>
+            {{ $header }}
         @endif
         {{ $slot }}
     </div>

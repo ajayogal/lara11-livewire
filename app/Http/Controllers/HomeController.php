@@ -11,9 +11,4 @@ class HomeController extends Controller
     {
         return view('home.index');
     }
-
-    public function show() : View
-    {
-        return view('home.index');
-    }
 }
