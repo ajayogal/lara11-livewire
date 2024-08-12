@@ -7,6 +7,11 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Config app
+``
+php artisan migrate --seed
+``
+
 ## Run app
 ``
 php artisan serve
