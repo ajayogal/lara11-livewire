@@ -8,11 +8,11 @@
 </p>
 
 ## Config app
-``
+```
 php artisan migrate --seed
-``
+```
 
 ## Run app
-``
+```
 php artisan serve
-``
+```
