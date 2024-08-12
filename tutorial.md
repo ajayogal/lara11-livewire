@@ -44,3 +44,17 @@ touch resources/scss/app.scss
 php artisan make:model Todo -m
 ``
 
+## Debugging Laravel
+### Intallation of telescope
+``
+composer require laravel/telescope --dev
+php artisan telescope:install
+php artisan migrate
+``
+Usage: Access Telescope via `/telescope` in your application. It provides a detailed history of actions within your application.
+
+### Installation of laravel-debugbar
+``
+composer require barryvdh/laravel-debugbar --dev
+``
+
