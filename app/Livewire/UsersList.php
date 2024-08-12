@@ -14,8 +14,6 @@ class UsersList extends Component
     public $query = "";
     public function render()
     {
-        $this->searchUsers();
-
         return view('livewire.users-list', [
             'users' => $this->users
         ])->layout('layouts.base');
