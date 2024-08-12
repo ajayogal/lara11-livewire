@@ -1,7 +1,15 @@
 <div>
+    <x-slot name="header">
+        <nav class="navbar bg-body-tertiary mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand">{{ "Users" }}</a>
+            </div>
+        </nav>
+    </x-slot>
+    @livewire('common.search-user')
     <div class="row">
         <div class="col-md-12 mb-2">
-            Total Users: {{ sizeof($users) }}
+            Results: {{ sizeof($users) }} record(s) found!!
         </div>
     </div>
     <div class="row">

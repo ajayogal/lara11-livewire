@@ -15,7 +15,7 @@ class SearchBar extends Component
         if(strlen($this->search_text) >=1){
             $results = Todo::where('title', 'like', "%{$this->search_text}%")->limit(10)->get();
         }
-        return view('livewire.search-bar', [
+        return view('livewire.search-bar-livewire', [
             'todos' => $results
         ]);
     }

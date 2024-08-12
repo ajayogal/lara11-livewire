@@ -111,3 +111,20 @@ php artisan volt:install
 php artisan make:volt volt-component
 ``
 
+## Livewire Folio
+
+``
+composer require livewire/folio
+php artisan folio:install
+``
+
+### create folio
+``
+php artisan make:folio MyProfile
+php artisan make:folio Folder/index
+``
+
+### check folio routes
+``
+php artisan folio:list
+``

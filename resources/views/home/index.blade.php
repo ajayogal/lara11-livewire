@@ -6,6 +6,16 @@
             </div>
         </nav>
     </x-slot>
-    @livewire('users-search')
-    @livewire('users-list')
+    <div class="row">
+        <div class="col-4">
+            @livewire('search-bar')
+        </div>
+        <div class="col-4">
+            @livewire('search-bar-volt-classbased')
+        </div>
+        <div class="col-4">
+            @livewire('search-bar-volt')
+        </div>
+    </div>
+
 </x-base-layout>

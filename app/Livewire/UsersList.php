@@ -5,10 +5,11 @@ namespace App\Livewire;
 use App\Models\Todo;
 use App\Models\User;
 use Livewire\Component;
+use Livewire\Attributes\On;
 
 class UsersList extends Component
 {
-    protected $listeners = ['searchUpdated' => 'searchUsersUpdated'];
+    // protected $listeners = ['searchUpdated' => 'searchUsersUpdated'];
     public $users = [];
     public $query = "";
     public function render()
@@ -17,9 +18,10 @@ class UsersList extends Component
 
         return view('livewire.users-list', [
             'users' => $this->users
-        ]);
+        ])->layout('layouts.base');
     }
 
+    #[On('searchUpdated')]
     public function searchUsersUpdated($query)
     {
         // dd($query);
