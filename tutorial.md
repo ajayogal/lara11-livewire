@@ -239,6 +239,7 @@ valet install
 
 ### Sharing site using Ngrok
 Update your Valet configuration using the share-tool command, specifying either ``ngrok`` or ``expose``:
+```
 valet share-tool ngrok
 
 cd ~/Sites/laravel
@@ -246,8 +247,10 @@ cd ~/Sites/laravel
 valet share
 
 ```
+
 To stop sharing your site, you may press ``Control + C``.
 Also, can define region. For more read [ngrok documentation](https://ngrok.com/docs)
+
 ```
 valet share --region=eu
 ```
