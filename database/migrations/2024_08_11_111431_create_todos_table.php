@@ -18,7 +18,7 @@ return new class extends Migration
             )->restrictOnDelete();
             $table->string('title')->index();
             $table->longText('description')->nullable()->index();
-            $table->boolean('is_completed');
+            $table->boolean('is_completed')->default(false);
             $table->timestamps();
         });
     }

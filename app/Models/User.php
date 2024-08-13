@@ -53,13 +53,13 @@ class User extends Authenticatable
     public function completedTodos()
     {
         return $this->hasMany(Todo::class)
-        ->where('is_completed', true);
+        ->where('is_completed', true)->orderByDesc('id');
     }
 
     public function incompletedTodos()
     {
         return $this->hasMany(Todo::class)
-        ->where('is_completed', false);
+        ->where('is_completed', false)->orderByDesc('id');
     }
 
 }

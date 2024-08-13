@@ -9,7 +9,6 @@ use Livewire\Attributes\On;
 
 class UsersList extends Component
 {
-    // protected $listeners = ['searchUpdated' => 'searchUsersUpdated'];
     public $users = [];
     public $query = "";
     public function render()

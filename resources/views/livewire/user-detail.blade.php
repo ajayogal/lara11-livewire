@@ -30,9 +30,17 @@
                             </div>
                         </div>
                         <div>
-                            <!-- button -->
-                            <a href="#" class="btn btn-outline-primary
-                d-none d-md-block">Edit Profile</a>
+                            {{-- create todo --}}
+                            <button type="button" class="btn btn-outline-primary d-none d-md-block" data-bs-toggle="modal" data-bs-target="#createTodo" >Create Task</button>
+
+                            <div class="modal fade" id="createTodo"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createTodoLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        @livewire('todo.create-todo', ['user_id' => $user->id ])
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <!-- nav -->
@@ -112,7 +120,9 @@
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownactivityOne">
                                                 <a class="dropdown-item d-flex align-items-center" href="#!">Edit</a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#!">Delete</a>
+                                                <button class="dropdown-item d-flex align-items-center" type="button"
+                                                wire:click="delete({{ $todo->id }})"
+                                                wire:confirm="Are you sure you want to delete this post?">Delete</button>
                                             </div>
                                         </div>
                                     </div>
