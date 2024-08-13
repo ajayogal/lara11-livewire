@@ -18,7 +18,7 @@ new class extends Component {
     {
         // dd($this->user_id);
         $validated = $this->validate([
-        'title' => 'required|max:50',
+        'title' => 'required|max:100',
         'description' => 'max:200|required',
         'user_id'     => 'required|exists:users,id' // Ensure the user_id is valid
         ]);
@@ -44,16 +44,17 @@ new class extends Component {
             @if(session('message'))
                 <div class="alert alert-success">{{ session('message') }}</div>
             @endif
-            <div class="mb-3">
+            <div class="mb-3 position-relative">
                 <label for="recipient-name" class="col-form-label">Title:</label>
-                <input wire:model.live="title" type="text" class="form-control" id="recipient-name">
+                <input wire:model="title" type="text" class="form-control" id="recipient-name">
                 @error('title')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="mb-3 position-relative">
                 <label for="message-text" class="col-form-label">Description:</label>
-                <textarea wire:model.live="description" class="form-control" id="message-text"></textarea>
+                <textarea wire:model="description" class="form-control" id="message-text"></textarea>
+                <span class="position-absolute top-0 end-0"><span x-text="$wire.description.length"></span>/200</span>
                 @error('description')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
