@@ -37,6 +37,7 @@ class UserDetail extends Component
 
     public function delete($id)
     {
-        dd($id);
+        Todo::find($id)->delete();
+
     }
 }
